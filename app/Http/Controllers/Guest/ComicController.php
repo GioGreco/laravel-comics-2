@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+//importo per utilizzo in store
+use App\Models\Comic;
+
 class ComicController extends Controller
 {
     /**
@@ -14,8 +17,8 @@ class ComicController extends Controller
      */
     public function index()
     {
-        // $comics = Comic::all();
-        $comics = config('comics_db.comics');
+        $comics = Comic::all();
+        // $comics = config('comics_db.comics');
         return view('comics.index', compact('comics'));
     }
 
@@ -48,7 +51,8 @@ class ComicController extends Controller
      */
     public function show($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        return view('comics.show', compact('comic'));
     }
 
     /**

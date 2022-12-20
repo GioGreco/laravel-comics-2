@@ -142,3 +142,149 @@ footer{
     }
 
 }
+
+section{
+
+    background-color: $darkgrey;
+
+    #current-series{
+
+        a{
+            display: block;
+        }
+
+        .cover-wrapper{
+            color: white;
+            font-size: $f-smaller;
+
+            .cover{
+                width: 100%;
+                cursor: pointer;
+
+                img{
+                    width: 100%;
+                }
+
+                &:hover .comic-info{
+                    clip-path: polygon(100% 100%, 0 100%, 100% 24%);
+                }
+
+                .comic-info{
+                    background-image: url('https://img.freepik.com/premium-photo/old-texture-background-vintage-grunge-paper-antique-ancient-parchment-wall-design-template_213524-125.jpg');
+                    clip-path: polygon(100% 100%, 0 100%, 100% 100%);
+                    transition: clip-path .3s ease-out;
+                    font-size: $f-small;
+                    div{
+                        color: black;
+                        text-align: end;
+                        padding: 10px;
+                        .type{
+                            font-size: $f-smaller;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .banner{
+            background-color: $blue-bg;
+            width: max-content;
+            transform: translate(0, -50%);
+            color: white;
+        }
+    }
+
+    button{
+        background-color: $blue-bg;
+        border: none;
+        color: white;
+    }
+}
+
+#comicSpecs{
+    .current-comic{
+        height: 60px;
+        background-color: $blue-bg;
+        .container{
+            height: 100%;
+            width: 70%;
+            img{
+                bottom: 10px;
+                left: 0;
+            }
+        }
+    }
+
+    .comic-infos{
+        width: 70%;
+        padding: 50px;
+        .info-box{
+            width: 65%;
+            min-height: 100px;
+            h4{
+                font-size: 1.8rem;
+                text-transform: uppercase;
+            }
+
+            .price-availability{
+                height: 40px;
+                background-color: rgb(88, 176, 94);
+
+                .pa-left{
+                    width: 70%;
+                    height: 100%;
+                    border-right: 2px solid darkslategrey;
+                }
+
+                .pa-right{
+                    width: 30%;
+                }
+            }
+
+        }
+
+        .adv{
+            width: 35%;
+            min-height: 100px;
+        }
+    }
+
+    .more-infos{
+        background-color: #f6f6f6;
+        min-height: 300px;
+        .container{
+            width: 70%;
+            .talent{
+                width: 55%;
+                h4{
+                    padding: 20px 0;
+                    border-bottom: 1px solid $grey-icons-bg;
+                }
+                div{
+                    padding: 20px 0;
+                    border-bottom: 1px solid $grey-icons-bg;
+                }
+            }
+            .specs{
+                width: 45%;
+                h4{
+                    padding: 20px 0;
+                    border-bottom: 1px solid $grey-icons-bg;
+                }
+                div{
+                    padding: 20px 0;
+                    border-bottom: 1px solid $grey-icons-bg;
+                }
+            }
+        }
+    }
+
+    .browse-sections{
+        height: 40px;
+        background-color: paleturquoise;
+        > div{
+            height: 100%;
+        }
+    }
+}
