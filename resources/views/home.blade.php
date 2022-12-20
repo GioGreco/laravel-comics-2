@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.splash')
 
-@section('main-content')
+@section('splash-content')
 <h1>Ciao Home</h1>
 <a href="{{ route('comics.index') }}">comics/index</a>
 <br>
