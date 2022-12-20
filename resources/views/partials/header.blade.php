@@ -1,6 +1,6 @@
 <header class="container d-flex justify-content-between align-items-center">
     <div class="logo">
-        <a href="#"><img src="{{Vite::asset('resources/img/dc-logo.png')}}" alt="DC logo"></a>
+        <a href="{{ route('comics.index')}}"><img src="{{Vite::asset('resources/img/dc-logo.png')}}" alt="DC logo"></a>
     </div>
     <nav>
         <ul class="d-flex justify-content-between align-items-center">

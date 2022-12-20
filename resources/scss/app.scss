@@ -212,6 +212,8 @@ section{
             img{
                 bottom: 10px;
                 left: 0;
+                width: 195px;
+                height: 295px;
             }
         }
     }
@@ -286,5 +288,15 @@ section{
         > div{
             height: 100%;
         }
+    }
+}
+
+
+#createForm{
+    height: 100vh;
+
+    label{
+        margin-top: 12px;
+        margin-bottom: 5px;
     }
 }
