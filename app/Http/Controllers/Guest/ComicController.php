@@ -41,15 +41,17 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         $formData = $request->all();
-        $newComic = new Comic();
-        $newComic->title = $formData['title'];
-        $newComic->description = $formData['description'];
-        $newComic->thumb = $formData['thumb'];
-        $newComic->price = $formData['price'];
-        $newComic->series = $formData['series'];
-        $newComic->sale_date = $formData['sale_date'];
-        $newComic->type = $formData['type'];
-        $newComic->save();
+        // $newComic = new Comic();
+        // $newComic->title = $formData['title'];
+        // $newComic->description = $formData['description'];
+        // $newComic->thumb = $formData['thumb'];
+        // $newComic->price = $formData['price'];
+        // $newComic->series = $formData['series'];
+        // $newComic->sale_date = $formData['sale_date'];
+        // $newComic->type = $formData['type'];
+        // $newComic->save();
+
+        $newComic = Comic::create($formData);
 
         return redirect()->route('comics.show', [$newComic->id]);
     }
@@ -72,9 +74,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -86,7 +88,18 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        $formData = $request->all();
+        $comic->title = $formData['title'];
+        $comic->description = $formData['description'];
+        $comic->thumb = $formData['thumb'];
+        $comic->price = $formData['price'];
+        $comic->series = $formData['series'];
+        $comic->sale_date = $formData['sale_date'];
+        $comic->type = $formData['type'];
+        $comic->update();
+        // return view('products.edit', compact('product'));
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
@@ -95,8 +108,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('comics.index');
     }
 }

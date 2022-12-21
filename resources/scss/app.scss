@@ -157,6 +157,10 @@ section{
             color: white;
             font-size: $f-smaller;
 
+            .modify-comic{
+                width: max-content
+            }
+
             .cover{
                 width: 100%;
                 cursor: pointer;
@@ -164,6 +168,7 @@ section{
                 img{
                     width: 100%;
                 }
+
 
                 &:hover .comic-info{
                     clip-path: polygon(100% 100%, 0 100%, 100% 24%);
@@ -294,6 +299,14 @@ section{
 
 #createForm{
     height: 100vh;
+
+    .edit-title{
+        color: palevioletred;
+    }
+
+    &.edit{
+        background-color: orange;
+    }
 
     label{
         margin-top: 12px;
