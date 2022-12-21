@@ -23,7 +23,7 @@
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger rounded-pill">DELETE</button>
+                            <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger rounded-pill">DELETE</button>
                         </form>
                     </div>
                 </div>
